@@ -58,6 +58,8 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	/// If this client is being shown atmos debug overlays or not
 	var/atmos_debug_overlays = FALSE
 
+	///Boolean on whether they need at least a healths or healdoll, for unit tests.
+	var/needs_health_indicator = TRUE
 	/// The color to use for the screentips.
 	/// This is updated by the preference for cheaper reads than would be
 	/// had with a proc call, especially on one of the hottest procs in the game (MouseEntered).
@@ -303,6 +305,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	hud_used = new_hud
 	new_hud.build_action_groups()
 
+
 /**
  * Shows this hud's hud to some mob
  *
@@ -358,7 +361,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 				screenmob.client.screen += group_hotkeys
 			if (length(group_info))
 				screenmob.client.screen += group_info
-			if (length(group_storage))
+			if (length(group_storage) && viewmob == mymob)
 				screenmob.client.screen += group_storage
 
 			screenmob.client.screen += palette
