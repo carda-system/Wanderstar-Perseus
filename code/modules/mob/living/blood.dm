@@ -192,7 +192,7 @@
 	var/modified_blood_volume = get_blood_volume(apply_modifiers = TRUE)
 
 	// Some effects are halved mid-combat.
-	var/determined_mod = has_status_effect(/datum/status_effect/determined) ? 0.5 : 0
+	var/determined_mod = has_status_effect(/datum/status_effect/determined) ? 0.5 : 1
 
 	var/word = pick("dizzy","woozy","faint")
 	switch(modified_blood_volume)
@@ -400,7 +400,7 @@
 
 	if(blood_data["viruses"] && transfer_viruses)
 		for(var/datum/disease/blood_disease as anything in blood_data["viruses"])
-			if((blood_disease.spread_flags & DISEASE_SPREAD_SPECIAL) || (blood_disease.spread_flags & DISEASE_SPREAD_NON_CONTAGIOUS))
+			if((blood_disease.spread_flags & (DISEASE_SPREAD_SPECIAL|DISEASE_SPREAD_NON_CONTAGIOUS)))
 				continue
 			target.ForceContractDisease(blood_disease)
 
