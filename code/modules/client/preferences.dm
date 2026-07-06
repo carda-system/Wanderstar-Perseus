@@ -146,6 +146,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
+		tainted_character_profiles = TRUE
 		character_preview_view = create_character_preview_view(user)
 		ui = new(user, src, "PreferencesMenu")
 		ui.set_autoupdate(FALSE)
@@ -182,9 +183,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/data = list()
 
 	data["preview_options"] = list(PREVIEW_PREF_JOB, PREVIEW_PREF_LOADOUT, PREVIEW_PREF_UNDERWEAR, PREVIEW_PREF_NAKED) // OUTERBOUNDS ADDITION
-
-	data["character_profiles"] = create_character_profiles()
-
 	data["character_preview_view"] = character_preview_view.assigned_map
 	data["overflow_role"] = SSjob.get_job_type(SSjob.overflow_role).title
 	data["window"] = current_window

@@ -61,13 +61,15 @@
 ///
 
 /datum/species/proc/add_doppler_markings(mob/living/carbon/human/target, value, colorvalue, bodypart)
-	var/handlayer = FALSE
+	var/list/handlayer = list()
 	bodypart = marking_zones(bodypart)
 	if(bodypart == BODY_ZONE_PRECISE_L_HAND)
-		handlayer = EXTERNAL_HAND
+		handlayer += EXTERNAL_ADJACENT
+		handlayer[EXTERNAL_ADJACENT] = BODY_FRONT_LAYER
 		bodypart = BODY_ZONE_L_ARM
 	else if(bodypart == BODY_ZONE_PRECISE_R_HAND)
-		handlayer = EXTERNAL_HAND
+		handlayer += EXTERNAL_ADJACENT
+		handlayer[EXTERNAL_ADJACENT] = BODY_FRONT_LAYER
 		bodypart = BODY_ZONE_R_ARM
 	var/obj/item/bodypart/people_part =  target.get_bodypart(bodypart)
 	if(people_part)
@@ -79,9 +81,9 @@
 
 		overlay.icon = accessory.icon
 		overlay.icon_state = accessory.icon_state
-		if(handlayer)
+		if(length(handlayer))
 			overlay.ishand = TRUE
-			overlay.layers = handlayer
+			overlay.set_layers(handlayer)
 		if(bodypart == BODY_ZONE_HEAD)
 			overlay.use_gender = FALSE
 		else
@@ -107,7 +109,7 @@
 /datum/bodypart_overlay/simple/body_marking/body_markings/get_accessory(name)
 	return SSaccessories.body_markings[name]
 
-/datum/bodypart_overlay/simple/body_marking/body_markings/get_image(layer, obj/item/bodypart/limb)
+/datum/bodypart_overlay/simple/body_marking/body_markings/get_image(obj/item/bodypart/limb, layer_index, layer_real)
 	var/gender_string = ""
 	if(use_gender && !(limb.body_zone in GLOB.limb_zones))
 		gender_string = (limb.is_dimorphic) ? (limb.limb_gender == "m" ? MALE + "_" : FEMALE + "_") : "male_" // defaults to male so that andros dont get tiddies
@@ -116,7 +118,7 @@
 		zonestring = "digitigrade_1_" + limb.body_zone
 	if(ishand)
 		zonestring = limb.aux_zone
-	return image(icon, gender_string + icon_state + "_" + zonestring, layer = layer)
+	return image(icon, gender_string + icon_state + "_" + zonestring, layer = layer_real)
 
 #undef MARKING_LIST_LEN
 

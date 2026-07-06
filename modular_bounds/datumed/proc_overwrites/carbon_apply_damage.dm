@@ -45,7 +45,7 @@
 					damage_source = attacking_item,
 					wound_clothing = wound_clothing,
 				))
-					update_damage_overlays()
+				update_damage_overlays()
 				damage_dealt = actual_hit.get_damage() - delta // Unfortunately bodypart receive_damage doesn't return damage dealt so we do it manually
 			else
 				damage_dealt = -1 * adjust_brute_loss(damage_amount, forced = forced)
@@ -64,7 +64,7 @@
 					damage_source = attacking_item,
 					wound_clothing = wound_clothing,
 				))
-					update_damage_overlays()
+				update_damage_overlays()
 				damage_dealt = actual_hit.get_damage() - delta // See above
 			else
 				damage_dealt = -1 * adjust_fire_loss(damage_amount, forced = forced)
