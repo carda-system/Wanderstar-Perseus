@@ -22,6 +22,4 @@
 				GLOB.addictions[key].process_addiction(src, seconds_per_tick)
 			handle_brain_damage(seconds_per_tick)
 	if(stat != DEAD)
-		handle_bodyparts(seconds_per_tick)
-	if(stat != DEAD)
 		return TRUE

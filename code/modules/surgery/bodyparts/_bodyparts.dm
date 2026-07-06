@@ -1177,12 +1177,6 @@
 
 	update_draw_color()
 
-	// OUTERBOUNDS ADDITION - species limb opacity
-	var/datum/species/owner_species = owner.dna.species
-	if(owner_species && owner_species.body_alpha != 255)
-		alpha = owner_species.body_alpha
-	// OUTERBOUNDS ADDITION END
-
 	if(!is_creating || !owner)
 		return FALSE
 
@@ -1200,6 +1194,10 @@
 			species_color = owner_species.fixed_mut_color
 		else
 			species_color = human_owner.dna.features[FEATURE_MUTANT_COLOR]
+		// OUTERBOUNDS ADDITION - species limb opacity
+		if(owner_species && owner_species.body_alpha != 255)
+			alpha = owner_species.body_alpha
+		// OUTERBOUNDS ADDITION END
 	else
 		skin_tone = ""
 		species_color = ""
