@@ -67,16 +67,11 @@
 					final_weight += stored_item.carry_weight
 	if(final_weight > max_carry_weight * 3)
 		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/carry_weight, TRUE, 2)
-		add_or_change_medical_condition(/datum/medical_condition/overburden, null, CONDITION_SOURCE_OVERBURDENED, 9)
 	else if(final_weight > max_carry_weight * 2)
 		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/carry_weight, TRUE, 1.5)
-		add_or_change_medical_condition(/datum/medical_condition/overburden, null, CONDITION_SOURCE_OVERBURDENED, 7)
 	else if(final_weight > max_carry_weight * 1.5)
 		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/carry_weight, TRUE, 0.75)
-		add_or_change_medical_condition(/datum/medical_condition/overburden, null, CONDITION_SOURCE_OVERBURDENED, 5)
 	else if(final_weight > max_carry_weight)
 		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/carry_weight, TRUE, 0.4)
-		add_or_change_medical_condition(/datum/medical_condition/overburden, null, CONDITION_SOURCE_OVERBURDENED, 3)
 	else
 		add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/carry_weight, TRUE, 0)
-		remove_medical_condition(/datum/medical_condition/overburden, null, CONDITION_SOURCE_OVERBURDENED)

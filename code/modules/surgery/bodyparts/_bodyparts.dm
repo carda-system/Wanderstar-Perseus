@@ -690,8 +690,8 @@
  * sharpness - Flag on whether the attack is edged or pointy
  * attack_direction - The direction the bodypart is attacked from, used to send blood flying in the opposite direction.
  * damage_source - The source of damage, typically a weapon.
- */ /// OUTERBOUNDS REMOVAL - HANDLED IN DATUMED
-/* /obj/item/bodypart/proc/receive_damage(brute = 0, burn = 0, blocked = 0, updating_health = TRUE, forced = FALSE, required_bodytype = null, wound_bonus = 0, exposed_wound_bonus = 0, sharpness = NONE, attack_direction = null, damage_source, wound_clothing = TRUE)
+ */
+/obj/item/bodypart/proc/receive_damage(brute = 0, burn = 0, blocked = 0, updating_health = TRUE, forced = FALSE, required_bodytype = null, wound_bonus = 0, exposed_wound_bonus = 0, sharpness = NONE, attack_direction = null, damage_source, wound_clothing = TRUE)
 	SHOULD_CALL_PARENT(TRUE)
 
 	var/hit_percent = forced ? 1 : (100-blocked)/100
@@ -790,7 +790,7 @@
 			update_disabled()
 		if(updating_health)
 			owner.updatehealth()
-	return update_bodypart_damage_state() */
+	return update_bodypart_damage_state()
 
 /// Returns a bitflag using ANATOMY_EXTERIOR or ANATOMY_INTERIOR. Used to determine if we as a whole have a interior or exterior biostate, or both.
 /obj/item/bodypart/proc/get_bio_state_status()
@@ -928,8 +928,8 @@
 	burn_dam = new_value
 
 //Returns total damage.
-/* /obj/item/bodypart/proc/get_damage()
-	return brute_dam + burn_dam */ // OUTERBOUNDS EDIT - Handled by DATUMED
+/obj/item/bodypart/proc/get_damage()
+	return brute_dam + burn_dam
 
 //Checks disabled status thresholds
 /obj/item/bodypart/proc/update_disabled(update_limbs = TRUE)
@@ -1581,7 +1581,7 @@
 
 /// Refresh the cache of our rate of bleeding sans any modifiers
 /// ANYTHING ADDED TO THIS PROC NEEDS TO CALL IT WHEN ITS EFFECT CHANGES
-/* /obj/item/bodypart/proc/refresh_bleed_rate() // OUTERBOUNDS EDIT - Handled in DATUMED
+/obj/item/bodypart/proc/refresh_bleed_rate()
 	SIGNAL_HANDLER
 	SHOULD_NOT_OVERRIDE(TRUE)
 
@@ -1646,7 +1646,7 @@
 	if(cached_bleed_rate != old_bleed_rate)
 		update_part_wound_overlay()
 
-	return cached_bleed_rate */
+	return cached_bleed_rate
 
 /obj/item/bodypart/proc/update_part_wound_overlay()
 	if(!owner)

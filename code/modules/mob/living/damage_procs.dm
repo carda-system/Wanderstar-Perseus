@@ -343,7 +343,7 @@
 		return FALSE
 	return TRUE
 
-/* /mob/living/proc/adjust_tox_loss(amount, updating_health = TRUE, forced = FALSE, required_biotype = ALL)
+/mob/living/proc/adjust_tox_loss(amount, updating_health = TRUE, forced = FALSE, required_biotype = ALL)
 	if(!can_adjust_tox_loss(amount, forced, required_biotype))
 		return 0
 
@@ -367,7 +367,7 @@
 		return FALSE
 
 	if(updating_health)
-		updatehealth() */ // OUTERBOUNDS EDIT - Handled in DATUMED
+		updatehealth()
 
 
 /mob/living/proc/set_tox_loss(amount, updating_health = TRUE, forced = FALSE, required_biotype = ALL)
