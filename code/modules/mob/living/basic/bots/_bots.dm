@@ -114,7 +114,7 @@ GLOBAL_LIST_INIT(command_strings, list(
 /mob/living/basic/bot/Initialize(mapload)
 	. = ..()
 
-	add_traits(list(TRAIT_SILICON_ACCESS, TRAIT_REAGENT_SCANNER, TRAIT_UNOBSERVANT), INNATE_TRAIT)
+	add_traits(list(TRAIT_REAGENT_SCANNER, TRAIT_UNOBSERVANT), INNATE_TRAIT)
 	AddElement(/datum/element/ai_retaliate)
 	RegisterSignal(src, COMSIG_MOVABLE_MOVED, PROC_REF(handle_loop_movement))
 	RegisterSignal(src, COMSIG_ATOM_WAS_ATTACKED, PROC_REF(after_attacked))
@@ -788,6 +788,7 @@ GLOBAL_LIST_INIT(command_strings, list(
 
 /mob/living/basic/bot/rust_heretic_act()
 	adjust_brute_loss(400)
+	return TRUE
 
 /mob/living/basic/bot/proc/retrieve_access(mob/bot, list/player_access)
 	SIGNAL_HANDLER
