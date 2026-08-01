@@ -21,20 +21,25 @@
 	coldmod = 1
 	heatmod = 1
 	payday_modifier = 1
-	changesource_flags = MIRROR_BADMIN | RACE_SWAP | ERT_SPAWN
+	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
 	// species_cookie =
 	// meat =
 	// skinned_type =
 	// species_language_holder =
 	digitigrade_customization = DIGITIGRADE_OPTIONAL
-	/* bodypart_overrides = list(
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/lizard,
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/lizard,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/lizard,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/lizard,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/lizard,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/lizard,
-	) */
+	bodypart_overrides = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/avian,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/avian,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/avian,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/avian,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/avian,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/avian,
+	)
+
+/datum/species/avian/get_digitgrade_for_species(not_left)
+	if(not_left)
+		return /obj/item/bodypart/leg/right/avian/digitigrade
+	return /obj/item/bodypart/leg/left/avian/digitigrade
 
 /datum/species/avian/prepare_human_for_preview(mob/living/carbon/human/preview_mob)
 	return
