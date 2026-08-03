@@ -371,6 +371,11 @@ ROUNDSTART_RACES human
 
 ## Species specific to the Perseus Arm Extended Universe
 ROUNDSTART_RACES alcyoni
+ROUNDSTART_RACES persean
+ROUNDSTART_RACES cenerian
+ROUNDSTART_RACES nanthi
+ROUNDSTART_RACES shedir
+#ROUNDSTART_RACES archen
 
 ## Races that are strictly worse than humans that could probably be turned on without balance concerns
 #ROUNDSTART_RACES felinid

@@ -9,7 +9,7 @@
 /obj/item/bodypart/chest/aquatic
 	icon_greyscale = 'modular_bounds/species/species_types/aquatic/icons/bodyparts.dmi'
 	limb_id = SPECIES_AQUATIC
-	is_dimorphic = TRUE
+	is_dimorphic = FALSE
 	should_draw_greyscale = TRUE
 
 /obj/item/bodypart/arm/left/aquatic
@@ -51,7 +51,7 @@
 	should_draw_greyscale = TRUE
 
 /obj/item/bodypart/leg/right/aquatic/digitigrade
-	limb_id = BODYPART_ID_DIGITIGRADE
+	limb_id = SPECIES_DIGI_AQUATIC
 	species_id = SPECIES_AQUATIC
 	bodyshape = BODYSHAPE_HUMANOID
 	footprint_sprite = FOOTPRINT_SPRITE_CLAWS
@@ -62,7 +62,7 @@
 	AddComponent(/datum/component/digitigrade_limb, SPECIES_AQUATIC, initial(limb_id))
 
 /obj/item/bodypart/leg/left/aquatic/digitigrade
-	limb_id = BODYPART_ID_DIGITIGRADE
+	limb_id = SPECIES_DIGI_AQUATIC
 	species_id = SPECIES_AQUATIC
 	bodyshape = BODYSHAPE_HUMANOID
 	footprint_sprite = FOOTPRINT_SPRITE_CLAWS

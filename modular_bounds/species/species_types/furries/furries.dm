@@ -14,31 +14,26 @@
 	) */
 	/* mutant_organs = list(
 	) */
-	// mutanttongue =
 	// mutanteyes =
-	// mutantbrain =
-	// exotic_bloodtype =
+	exotic_bloodtype = /datum/blood_type/red
 	coldmod = 1
 	heatmod = 1
 	payday_modifier = 1
 	changesource_flags = MIRROR_BADMIN | RACE_SWAP | ERT_SPAWN
-	// species_cookie =
-	// meat =
-	// skinned_type =
 	// species_language_holder =
 	digitigrade_customization = DIGITIGRADE_OPTIONAL
 	bodypart_overrides = list(
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/lizard,
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/lizard,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/lizard,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/lizard,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/lizard,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/lizard,
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/furries,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/furries,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/furries,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/furries,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/furries,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/furries,
 	)
 
 /datum/species/furries/get_digitgrade_for_species(not_left)
 	if(not_left)
-		return /obj/item/bodypart/leg/right/furries/digitigradee
+		return /obj/item/bodypart/leg/right/furries/digitigrade
 	return /obj/item/bodypart/leg/left/furries/digitigrade
 
 /datum/species/furries/prepare_human_for_preview(mob/living/carbon/human/preview_mob)

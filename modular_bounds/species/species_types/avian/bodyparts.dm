@@ -51,9 +51,9 @@
 	footstep_type = FOOTSTEP_MOB_CLAW
 
 /obj/item/bodypart/leg/right/avian/digitigrade
-	limb_id = BODYPART_ID_DIGITIGRADE
+	limb_id = SPECIES_DIGI_AVIAN
 	species_id = SPECIES_AVIAN
-	bodyshape = BODYSHAPE_HUMANOID
+	bodyshape = BODYSHAPE_DIGITIGRADE
 	footprint_sprite = FOOTPRINT_SPRITE_CLAWS
 	footstep_type = FOOTSTEP_MOB_CLAW
 
@@ -62,9 +62,9 @@
 	AddComponent(/datum/component/digitigrade_limb, SPECIES_AVIAN, initial(limb_id))
 
 /obj/item/bodypart/leg/left/avian/digitigrade
-	limb_id = BODYPART_ID_DIGITIGRADE
+	limb_id = SPECIES_DIGI_AVIAN
 	species_id = SPECIES_AVIAN
-	bodyshape = BODYSHAPE_HUMANOID
+	bodyshape = BODYSHAPE_DIGITIGRADE
 	footprint_sprite = FOOTPRINT_SPRITE_CLAWS
 	footstep_type = FOOTSTEP_MOB_CLAW
 

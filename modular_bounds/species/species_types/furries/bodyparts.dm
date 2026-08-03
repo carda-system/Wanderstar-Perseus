@@ -51,7 +51,7 @@
 	should_draw_greyscale = TRUE
 
 /obj/item/bodypart/leg/right/furries/digitigrade
-	limb_id = BODYPART_ID_DIGITIGRADE
+	limb_id = SPECIES_DIGI_FURRIES
 	species_id = SPECIES_FURRIES
 	bodyshape = BODYSHAPE_HUMANOID
 	footprint_sprite = FOOTPRINT_SPRITE_PAWS
@@ -62,7 +62,7 @@
 	AddComponent(/datum/component/digitigrade_limb, SPECIES_FURRIES, initial(limb_id))
 
 /obj/item/bodypart/leg/left/furries/digitigrade
-	limb_id = BODYPART_ID_DIGITIGRADE
+	limb_id = SPECIES_DIGI_FURRIES
 	species_id = SPECIES_FURRIES
 	bodyshape = BODYSHAPE_HUMANOID
 	footprint_sprite = FOOTPRINT_SPRITE_PAWS

@@ -14,17 +14,11 @@
 	) */
 	/* mutant_organs = list(
 	) */
-	// mutanttongue =
-	// mutanteyes =
-	// mutantbrain =
-	// exotic_bloodtype =
+	exotic_bloodtype = /datum/blood_type/red
 	coldmod = 1
 	heatmod = 1
 	payday_modifier = 1
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
-	// species_cookie =
-	// meat =
-	// skinned_type =
 	// species_language_holder =
 	digitigrade_customization = DIGITIGRADE_OPTIONAL
 	bodypart_overrides = list(

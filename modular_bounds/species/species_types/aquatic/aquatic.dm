@@ -14,17 +14,12 @@
 	) */
 	/* mutant_organs = list(
 	) */
-	// mutanttongue =
-	// mutanteyes =
-	// mutantbrain =
-	// exotic_bloodtype =
+	mutanteyes = /obj/item/organ/eyes/aquatic
+	exotic_bloodtype = /datum/blood_type/red
 	coldmod = 1
 	heatmod = 1
 	payday_modifier = 1
 	changesource_flags = MIRROR_BADMIN | RACE_SWAP | ERT_SPAWN
-	// species_cookie =
-	// meat =
-	// skinned_type =
 	// species_language_holder =
 	digitigrade_customization = DIGITIGRADE_OPTIONAL
 	bodypart_overrides = list(
