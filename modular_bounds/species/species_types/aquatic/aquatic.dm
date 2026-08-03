@@ -27,14 +27,19 @@
 	// skinned_type =
 	// species_language_holder =
 	digitigrade_customization = DIGITIGRADE_OPTIONAL
-	/* bodypart_overrides = list(
-		BODY_ZONE_HEAD = /obj/item/bodypart/head/lizard,
-		BODY_ZONE_CHEST = /obj/item/bodypart/chest/lizard,
-		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/lizard,
-		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/lizard,
-		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/lizard,
-		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/lizard,
-	) */
+	bodypart_overrides = list(
+		BODY_ZONE_HEAD = /obj/item/bodypart/head/aquatic,
+		BODY_ZONE_CHEST = /obj/item/bodypart/chest/aquatic,
+		BODY_ZONE_L_ARM = /obj/item/bodypart/arm/left/aquatic,
+		BODY_ZONE_R_ARM = /obj/item/bodypart/arm/right/aquatic,
+		BODY_ZONE_L_LEG = /obj/item/bodypart/leg/left/aquatic,
+		BODY_ZONE_R_LEG = /obj/item/bodypart/leg/right/aquatic,
+	)
+
+/datum/species/aquatic/get_digitgrade_for_species(not_left)
+	if(not_left)
+		return /obj/item/bodypart/leg/right/aquatic/digitigrade
+	return /obj/item/bodypart/leg/left/aquatic/digitigrade
 
 /datum/species/aquatic/prepare_human_for_preview(mob/living/carbon/human/preview_mob)
 	return
