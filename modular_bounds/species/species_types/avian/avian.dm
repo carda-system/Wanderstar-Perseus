@@ -13,11 +13,8 @@
 	/* body_markings = list(
 	) */
 	mutant_organs = list(
-		// /obj/item/organ/horns = SPRITE_ACCESSORY_NONE,
-		// /obj/item/organ/frills = SPRITE_ACCESSORY_NONE,
 		/obj/item/organ/ob_snout = "Beak - Normal",
-		// /obj/item/organ/spines = SPRITE_ACCESSORY_NONE,
-		// /obj/item/organ/tail/lizard = "Smooth",
+		/obj/item/organ/tail/ob = "Tailfeathers - Normal",
 	)
 	exotic_bloodtype = /datum/blood_type/red
 	coldmod = 1
