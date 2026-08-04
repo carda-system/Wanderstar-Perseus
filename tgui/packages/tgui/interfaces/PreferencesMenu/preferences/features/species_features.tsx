@@ -123,3 +123,10 @@ export const heterochromatic: Feature<string> = {
   name: 'Heterochromatic (Right Eye) color',
   component: FeatureColorInput,
 };
+
+// OUTERBOUNDS ADDITION START
+export const feature_ob_snout_color: Feature<string> = {
+  name: 'Snout color',
+  component: FeatureColorInput,
+};
+// OUTERBOUNDS ADDITION END

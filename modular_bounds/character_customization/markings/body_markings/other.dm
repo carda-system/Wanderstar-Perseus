@@ -17,14 +17,12 @@
 /datum/sprite_accessory/body_marking/other/tonage
 	name = "Body Tonage"
 	icon_state = "tonage"
-	color_src = "#555555"
 	body_zones = CHEST
 	gender_specific = FALSE
 
 /datum/sprite_accessory/body_marking/other/belly_slim_toned
 	name = "Belly Slim (Alt) + Tonage"
 	icon_state = "bellyslimtoned"
-	color_src = "#555555"
 	body_zones = CHEST
 	gender_specific = FALSE
 
@@ -117,25 +115,21 @@
 /datum/sprite_accessory/body_marking/other/drake_eyes
 	name = "Drake Eyes"
 	icon_state = "drakeeyes"
-	color_src = "#FF0000"
 	body_zones = HEAD
 
 /datum/sprite_accessory/body_marking/other/big_ol_eyes
 	name = "Large Eyes"
 	icon_state = "bigoleyes"
-	color_src = "#FF0000"
 	body_zones = HEAD
 
 /datum/sprite_accessory/body_marking/other/three_eyes
 	name = "Three Eyes"
 	icon_state = "3eyes"
-	color_src = "#FF0000"
 	body_zones = HEAD
 
 /datum/sprite_accessory/body_marking/other/four_eyes
 	name = "Four Eyes"
 	icon_state = "4eyes"
-	color_src = "#FF0000"
 	body_zones = HEAD
 
 /datum/sprite_accessory/body_marking/other/claws
