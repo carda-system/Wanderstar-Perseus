@@ -6,7 +6,7 @@
 	slot = ORGAN_SLOT_EXTERNAL_SNOUT
 	external_bodyshapes = BODYSHAPE_SNOUTED
 	restyle_flags = EXTERNAL_RESTYLE_FLESH
-	bodypart_overlay = /datum/bodypart_overlay/mutant/snout
+	bodypart_overlay = /datum/bodypart_overlay/mutant/ob/ob_snout
 	organ_flags = parent_type::organ_flags | ORGAN_EXTERNAL
 	dna_block = /datum/dna_block/feature/accessory/ob_snout
 	/// Offset to apply to equipment worn on the mouth we give to the head.
@@ -21,14 +21,25 @@
 			offset_x = list("east" = 1, "west" = -1),
 		)
 
-/datum/dna_block/feature/accessory/ob_snout
-	feature_key = FEATURE_OB_SNOUT
-
 /obj/item/organ/ob_snout/on_bodypart_remove(obj/item/bodypart/head/limb, movement_flags)
 	if(worn_mask_offset)
 		QDEL_NULL(worn_mask_offset)
 		limb.worn_mask_offset = null
 	return ..()
+
+/datum/dna_block/feature/accessory/ob_snout
+	feature_key = FEATURE_OB_SNOUT
+
+/datum/dna_block/feature/ob_snout_color
+	block_length = DNA_BLOCK_SIZE_COLOR
+	feature_key = FEATURE_OB_SNOUT_COLOR
+
+/datum/dna_block/feature/ob_snout_color/create_unique_block(mob/living/carbon/human/target)
+	return sanitize_hexcolor(target.dna.features[FEATURE_OB_SNOUT_COLOR], include_crunch = FALSE)
+
+/datum/dna_block/feature/ob_snout_color/apply_to_mob(mob/living/carbon/human/target, dna_hash)
+	target.dna.features[FEATURE_OB_SNOUT_COLOR] = sanitize_hexcolor(get_block(dna_hash))
+	target.update_body_parts()
 
 /datum/bodypart_overlay/mutant/ob/ob_snout
 	layers = list(EXTERNAL_ADJACENT = BODY_ADJ_LAYER)

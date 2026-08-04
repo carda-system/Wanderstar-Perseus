@@ -1,4 +1,5 @@
 /datum/sprite_accessory/ob_snouts
+	color_src = TRUE
 	em_block = TRUE
 
 // Lizardlike snouts

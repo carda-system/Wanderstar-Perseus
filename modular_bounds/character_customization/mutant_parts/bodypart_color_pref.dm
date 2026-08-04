@@ -4,6 +4,7 @@
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
 	relevant_inherent_trait = TRAIT_MUTANT_COLORS
+	priority = /datum/preference/choiced/species_feature::priority + 1
 	/// The feature we seek to change in DNA when applied
 	var/target_feature = FEATURE_MUTANT_COLOR
 
@@ -21,6 +22,7 @@
 	if(target_feature == FEATURE_MUTANT_COLOR)
 		return // A little safety
 	target.dna.features[target_feature] = value
+	target.update_body_parts(TRUE)
 
 /datum/preference/color/mutant_part_color/is_valid(value)
 	if(!..(value))
