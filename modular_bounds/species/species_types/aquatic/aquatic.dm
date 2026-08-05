@@ -11,11 +11,10 @@
 	)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
 	mutant_organs = list(
-		/obj/item/organ/snout/ob = SPRITE_ACCESSORY_NONE,
 		/obj/item/organ/tail/ob = SPRITE_ACCESSORY_NONE,
 		/obj/item/organ/horns/ob = SPRITE_ACCESSORY_NONE,
-		/obj/item/organ/ears/ob = SPRITE_ACCESSORY_NONE,
 	)
+	mutantears = /obj/item/organ/ears/ob
 	mutanteyes = /obj/item/organ/eyes/aquatic
 	exotic_bloodtype = /datum/blood_type/red
 	coldmod = 1
@@ -39,6 +38,7 @@
 	return /obj/item/bodypart/leg/left/aquatic/digitigrade
 
 /datum/species/aquatic/prepare_human_for_preview(mob/living/carbon/human/preview_mob)
+	preview_mob.dna.features[FEATURE_OB_EARS] = SPRITE_ACCESSORY_NONE
 	preview_mob.dna.features[FEATURE_MUTANT_COLOR] = "#816e86"
 	preview_mob.update_body(is_creating = TRUE)
 

@@ -14,9 +14,9 @@
 		/obj/item/organ/snout/ob = SPRITE_ACCESSORY_NONE,
 		/obj/item/organ/tail/ob = SPRITE_ACCESSORY_NONE,
 		/obj/item/organ/horns/ob = SPRITE_ACCESSORY_NONE,
-		/obj/item/organ/ears/ob = SPRITE_ACCESSORY_NONE,
 	)
 	mutanteyes = /obj/item/organ/eyes/insect
+	mutantears = /obj/item/organ/ears/ob
 	exotic_bloodtype = /datum/blood_type/insect
 	coldmod = 1
 	heatmod = 1

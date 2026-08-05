@@ -10,8 +10,8 @@
 	mutant_organs = list(
 		/obj/item/organ/tail/ob = SPRITE_ACCESSORY_NONE,
 		/obj/item/organ/horns/ob = SPRITE_ACCESSORY_NONE,
-		/obj/item/organ/ears/ob = SPRITE_ACCESSORY_NONE,
 	)
+	mutantears = /obj/item/organ/ears/ob
 	exotic_bloodtype = /datum/blood_type/red
 	coldmod = 1
 	heatmod = 1
