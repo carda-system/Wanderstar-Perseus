@@ -102,8 +102,10 @@ SUBSYSTEM_DEF(accessories) // just 'accessories' for brevity
 	feature_list[FEATURE_TAIL_MONKEY] = INIT_ACCESSORY(/datum/sprite_accessory/tails/monkey)
 	feature_list[FEATURE_TAIL_XENO] = INIT_ACCESSORY(/datum/sprite_accessory/tails/xeno)
 	// OUTERBOUNDS ADDITION BEGIN
-	feature_list[FEATURE_OB_SNOUT] = INIT_ACCESSORY(/datum/sprite_accessory/ob_snouts)
-	feature_list[FEATURE_OB_TAIL] = INIT_ACCESSORY(/datum/sprite_accessory/ob_tail)
+	feature_list[FEATURE_OB_SNOUT] = INIT_OPTIONAL_ACCESSORY(/datum/sprite_accessory/ob_snouts)
+	feature_list[FEATURE_OB_TAIL] = INIT_OPTIONAL_ACCESSORY(/datum/sprite_accessory/ob_tail)
+	feature_list[FEATURE_OB_EARS] = INIT_OPTIONAL_ACCESSORY(/datum/sprite_accessory/ob_ears)
+	feature_list[FEATURE_OB_HORNS] = INIT_OPTIONAL_ACCESSORY(/datum/sprite_accessory/ob_horns)
 	// OUTERBOUNDS ADDITION END
 
 /// This proc just initializes all /datum/sprite_accessory/hair_gradient into an list indexed by gradient-style name

@@ -10,11 +10,12 @@
 		TRAIT_MUTANT_COLORS,
 	)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	/* body_markings = list(
-	) */
-	/* mutant_organs = list(
-	) */
-	// mutanttongue =
+	mutant_organs = list(
+		/obj/item/organ/snout/ob = SPRITE_ACCESSORY_NONE,
+		/obj/item/organ/tail/ob = SPRITE_ACCESSORY_NONE,
+		/obj/item/organ/horns/ob = SPRITE_ACCESSORY_NONE,
+		/obj/item/organ/ears/ob = SPRITE_ACCESSORY_NONE,
+	)
 	mutanteyes = /obj/item/organ/eyes/insect
 	exotic_bloodtype = /datum/blood_type/insect
 	coldmod = 1
@@ -38,7 +39,12 @@
 	return /obj/item/bodypart/leg/left/insect/digitigrade
 
 /datum/species/insect/prepare_human_for_preview(mob/living/carbon/human/preview_mob)
-	return
+	preview_mob.dna.features[FEATURE_MUTANT_COLOR] = "#4c5050"
+	preview_mob.dna.features[FEATURE_OB_SNOUT] = "Insect - Itty-Bitty"
+	preview_mob.dna.features[FEATURE_OB_SNOUT_COLOR] = "#353535"
+	preview_mob.dna.features[FEATURE_OB_EARS] = "Antennae - Straight"
+	preview_mob.dna.features[FEATURE_OB_EARS_COLOR] = "#353535"
+	preview_mob.update_body(is_creating = TRUE)
 
 /datum/species/insect/get_species_description()
 	return "Bipedal insectoids varying wildly in appearance between any few members. They hail from a world that, on the surface, looks barren and rocky with only \

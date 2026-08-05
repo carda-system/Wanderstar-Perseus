@@ -7,10 +7,11 @@
 	)
 	// preview_outfit =
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	/* body_markings = list(
-	) */
-	/* mutant_organs = list(
-	) */
+	mutant_organs = list(
+		/obj/item/organ/tail/ob = SPRITE_ACCESSORY_NONE,
+		/obj/item/organ/horns/ob = SPRITE_ACCESSORY_NONE,
+		/obj/item/organ/ears/ob = SPRITE_ACCESSORY_NONE,
+	)
 	exotic_bloodtype = /datum/blood_type/red
 	coldmod = 1
 	heatmod = 1
@@ -20,7 +21,12 @@
 	// digitigrade_customization = DIGITIGRADE_OPTIONAL
 
 /datum/species/human/prepare_human_for_preview(mob/living/carbon/human/preview_mob)
-	return
+	preview_mob.skin_tone = "mixed1"
+	preview_mob.dna.features[FEATURE_OB_EARS] = "Solari - Wide Elf"
+	preview_mob.dna.features[FEATURE_OB_EARS_COLOR] = "#a57a66"
+	preview_mob.set_haircolor("#2c2b2a", update = FALSE)
+	preview_mob.set_hairstyle("Chunky Twin Buns", update = TRUE)
+	preview_mob.update_body(is_creating = TRUE)
 
 /datum/species/human/get_species_description()
 	return "Humanity, coming from Earth as we know it, or rather, would have known it in the year 17th century. Early exposure to the technologies of the space-faring \

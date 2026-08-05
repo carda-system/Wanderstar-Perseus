@@ -10,11 +10,11 @@
 		TRAIT_MUTANT_COLORS,
 	)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	/* body_markings = list(
-	) */
 	mutant_organs = list(
-		/obj/item/organ/ob_snout = "Lizard - Sharp",
-		/obj/item/organ/tail/ob = "Lizard - Tiger",
+		/obj/item/organ/snout/ob = SPRITE_ACCESSORY_NONE,
+		/obj/item/organ/tail/ob = SPRITE_ACCESSORY_NONE,
+		/obj/item/organ/horns/ob = SPRITE_ACCESSORY_NONE,
+		/obj/item/organ/ears/ob = SPRITE_ACCESSORY_NONE,
 	)
 	exotic_bloodtype = /datum/blood_type/copper
 	coldmod = 1
@@ -38,7 +38,12 @@
 	return /obj/item/bodypart/leg/left/digitigrade
 
 /datum/species/reptile/prepare_human_for_preview(mob/living/carbon/human/preview_mob)
-	return
+	preview_mob.dna.features[FEATURE_MUTANT_COLOR] = "#5f9597"
+	preview_mob.dna.features[FEATURE_OB_HORNS] = "Lizard - Ram (Alt)"
+	preview_mob.dna.features[FEATURE_OB_HORNS_COLOR] = "#353535"
+	preview_mob.set_haircolor("#b9985a", update = FALSE)
+	preview_mob.set_hairstyle("Comet", update = TRUE)
+	preview_mob.update_body(is_creating = TRUE)
 
 /datum/species/reptile/get_species_description()
 	return "A reptile-like people originating from a hot world with an arid band around the equator that gives way to more temperate poles."

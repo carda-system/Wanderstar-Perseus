@@ -10,11 +10,13 @@
 		TRAIT_MUTANT_COLORS,
 	)
 	inherent_biotypes = MOB_ORGANIC|MOB_HUMANOID
-	/* body_markings = list(
-	) */
-	/* mutant_organs = list(
-	) */
-	// mutanteyes =
+	mutant_organs = list(
+		/obj/item/organ/snout/ob = SPRITE_ACCESSORY_NONE,
+		/obj/item/organ/tail/ob = SPRITE_ACCESSORY_NONE,
+		/obj/item/organ/horns/ob = SPRITE_ACCESSORY_NONE,
+		/obj/item/organ/ears/ob = SPRITE_ACCESSORY_NONE,
+	)
+	mutanteyes =/obj/item/organ/eyes/furries
 	exotic_bloodtype = /datum/blood_type/red
 	coldmod = 1
 	heatmod = 1
@@ -37,7 +39,12 @@
 	return /obj/item/bodypart/leg/left/furries/digitigrade
 
 /datum/species/furries/prepare_human_for_preview(mob/living/carbon/human/preview_mob)
-	return
+	preview_mob.dna.features[FEATURE_MUTANT_COLOR] = "#64564e"
+	preview_mob.dna.features[FEATURE_OB_SNOUT] = "Nanthi - Lynx"
+	preview_mob.dna.features[FEATURE_OB_SNOUT_COLOR] = "#64564e"
+	preview_mob.dna.features[FEATURE_OB_EARS] = "Nanthi - Felinid"
+	preview_mob.dna.features[FEATURE_OB_EARS_COLOR] = "#64564e"
+	preview_mob.update_body(is_creating = TRUE)
 
 /datum/species/furries/get_species_description()
 	return "A furred people, usually sharing many features with earth's felidae, vulpes, and canidae life, often a mixture of the three. Their home planet resembles \

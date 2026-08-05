@@ -11,6 +11,5 @@
 	savefile_key = "feature_ob_tail_color"
 	savefile_identifier = PREFERENCE_CHARACTER
 	category = PREFERENCE_CATEGORY_SECONDARY_FEATURES
-	relevant_inherent_trait = TRAIT_MUTANT_COLORS
 	target_feature = FEATURE_OB_TAIL_COLOR
 

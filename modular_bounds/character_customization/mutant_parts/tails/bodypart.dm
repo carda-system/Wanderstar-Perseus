@@ -1,7 +1,6 @@
 /obj/item/organ/tail/ob
 	dna_block = /datum/dna_block/feature/accessory/ob_tail
 	bodypart_overlay = /datum/bodypart_overlay/mutant/ob/tail
-	wag_flags = NONE
 
 /datum/dna_block/feature/accessory/ob_tail
 	feature_key = FEATURE_OB_TAIL

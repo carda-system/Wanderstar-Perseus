@@ -1,31 +1,7 @@
-/obj/item/organ/ob_snout
+/obj/item/organ/snout/ob
 	name = "snout"
-	desc = "You know, usually these are attached to their owner."
-	icon_state = "snout"
-	zone = BODY_ZONE_HEAD
-	slot = ORGAN_SLOT_EXTERNAL_SNOUT
-	external_bodyshapes = BODYSHAPE_SNOUTED
-	restyle_flags = EXTERNAL_RESTYLE_FLESH
-	bodypart_overlay = /datum/bodypart_overlay/mutant/ob/snout
-	organ_flags = parent_type::organ_flags | ORGAN_EXTERNAL
 	dna_block = /datum/dna_block/feature/accessory/ob_snout
-	/// Offset to apply to equipment worn on the mouth we give to the head.
-	var/datum/worn_feature_offset/worn_mask_offset
-
-/obj/item/organ/ob_snout/on_bodypart_insert(obj/item/bodypart/head/limb)
-	. = ..()
-	if(isnull(limb.worn_mask_offset))
-		worn_mask_offset = limb.worn_mask_offset = new(
-			attached_part = limb,
-			feature_key = OFFSET_FACEMASK,
-			offset_x = list("east" = 1, "west" = -1),
-		)
-
-/obj/item/organ/ob_snout/on_bodypart_remove(obj/item/bodypart/head/limb, movement_flags)
-	if(worn_mask_offset)
-		QDEL_NULL(worn_mask_offset)
-		limb.worn_mask_offset = null
-	return ..()
+	bodypart_overlay = /datum/bodypart_overlay/mutant/ob/snout
 
 /datum/dna_block/feature/accessory/ob_snout
 	feature_key = FEATURE_OB_SNOUT
