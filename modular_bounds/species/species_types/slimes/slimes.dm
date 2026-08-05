@@ -1,6 +1,8 @@
 /mob/living/carbon/human/species/slime
 	race = /datum/species/slime
 
+// What does he even do?
+
 /datum/species/slime
 	name = "\improper Archen"
 	plural_form = "Archen"

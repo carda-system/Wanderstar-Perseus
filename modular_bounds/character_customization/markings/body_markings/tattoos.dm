@@ -1,6 +1,5 @@
 /datum/sprite_accessory/body_marking/tattoo
 	icon = 'modular_bounds/character_customization/markings/icons/markings/tattoo_markings.dmi'
-	color_src = "#112222" //slightly faded ink.
 	gender_specific = FALSE
 
 /datum/sprite_accessory/body_marking/tattoo/heart
