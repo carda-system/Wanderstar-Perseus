@@ -17,8 +17,7 @@
 	heatmod = 1
 	payday_modifier = 1
 	changesource_flags = MIRROR_BADMIN | RACE_SWAP | ERT_SPAWN
-	// species_language_holder =
-	// digitigrade_customization = DIGITIGRADE_OPTIONAL
+	species_language_holder = /datum/language_holder/crew
 
 /datum/species/human/prepare_human_for_preview(mob/living/carbon/human/preview_mob)
 	preview_mob.skin_tone = "mixed1"

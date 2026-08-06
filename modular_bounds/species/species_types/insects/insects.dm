@@ -22,7 +22,7 @@
 	heatmod = 1
 	payday_modifier = 1
 	changesource_flags = MIRROR_BADMIN | RACE_SWAP | ERT_SPAWN
-	// species_language_holder =
+	species_language_holder = /datum/language_holder/crew
 	digitigrade_customization = DIGITIGRADE_OPTIONAL
 	bodypart_overrides = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/insect,

@@ -46,3 +46,27 @@
 
 /datum/language/terrum
 	secret = TRUE
+
+/datum/language/draconic
+	secret = TRUE
+
+/datum/language/machine
+	secret = TRUE
+
+/datum/language/moffic
+	secret = TRUE
+
+/datum/language/shadowtongue
+	secret = TRUE
+
+/datum/language/sylvan
+	secret = TRUE
+
+/datum/language/voltaic
+	secret = TRUE
+
+/datum/language/wormspeak
+	secret = TRUE
+
+/datum/language/carptongue
+	secret = TRUE

@@ -18,7 +18,6 @@ GLOBAL_LIST_INIT(most_common_words_frequency, init_common_words_by_frequency())
 			continue
 
 		lang_list[lang_type] = new lang_type()
-	randomize_crusoes_local(lang_list) // OUTERBOUNDS ADDITION - Randomize Crusoe's Locals' Pidgins
 	return lang_list
 
 /proc/init_all_languages()

@@ -21,7 +21,7 @@
 	heatmod = 1
 	payday_modifier = 1
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_PRIDE | MIRROR_MAGIC | RACE_SWAP | ERT_SPAWN | SLIME_EXTRACT
-	// species_language_holder =
+	species_language_holder = /datum/language_holder/crew
 	digitigrade_customization = DIGITIGRADE_OPTIONAL
 	bodypart_overrides = list(
 		BODY_ZONE_HEAD = /obj/item/bodypart/head/avian,
