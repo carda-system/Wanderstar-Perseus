@@ -2,7 +2,6 @@ PROCESSING_SUBSYSTEM_DEF(operations_manager)
 	name = "Operations Manager"
 	ss_flags = SS_BACKGROUND
 	wait = 5 SECONDS
-	can_fire = FALSE
 	/// List of every possible operation we can pick from
 	var/list/all_operations = list()
 	/// The currently running operation for this round, if any
