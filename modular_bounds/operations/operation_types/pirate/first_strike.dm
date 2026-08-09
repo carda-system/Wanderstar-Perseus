@@ -8,5 +8,6 @@
 		requested our help with eliminating this threat before it becomes a danger to sophont lives."
 
 /datum/round_operation_type/pirate_first_strike/build_mission_queue()
-	SHOULD_CALL_PARENT(FALSE)
-	CRASH("Operation [src] has not properly implmeneted a build_mission_queue().")
+	missions_queue += new /datum/lazy_template/mission_type/pirate_intercept_raider
+	missions_queue += new /datum/lazy_template/mission_type/pirate_comms_outpost
+	missions_queue += new /datum/lazy_template/mission_type/pirate_arms_bunker

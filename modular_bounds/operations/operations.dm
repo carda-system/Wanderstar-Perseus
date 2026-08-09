@@ -29,6 +29,25 @@
 	current_mission.lazy_load()
 	current_mission.mission_status = MISSION_STATUS_RUNNING
 
+/// Instantly gives up on the current mission and allows the map to cleanup when wanted if it turns out to be too difficult
+/datum/round_operation_type/proc/give_up_on_mission()
+	current_mission.mission_status = MISSION_STATUS_FINISHED
+
+/// Sets the current mission to be ending and deletes the map after giving it time to clean up and rescue any mobs still present
+/datum/round_operation_type/proc/end_current_mission(forced_instant)
+	current_mission.mission_status = MISSION_STATUS_CLEANING
+	if(forced_instant)
+		delete_current_map()
+	else
+		addtimer(CALLBACK(src, PROC_REF(delete_current_map)), 30 SECONDS)
+
+/// Tells the current mission to delete itself
+/datum/round_operation_type/proc/delete_current_map()
+	current_mission.scrub_mission_map()
+	missions_queue -= current_mission
+	qdel(current_mission, TRUE)
+	current_mission = null
+
 /// Should be used for anything visual or player-facing for the operation, such as title, description, or an icon
 /datum/round_operation_type/proc/set_up_operation_presentation()
 	SHOULD_CALL_PARENT(FALSE)
