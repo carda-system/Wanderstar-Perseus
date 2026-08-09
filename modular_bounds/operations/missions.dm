@@ -12,10 +12,6 @@
 	/// The current status of the mission
 	var/mission_status = MISSION_STATUS_LOADING
 
-/datum/lazy_template/mission_type/New()
-	. = ..()
-	create_objectives_lists()
-
 /// Deletes the map that the mission generated
 /datum/lazy_template/mission_type/proc/scrub_mission_map()
 	if(length(reservations))
@@ -25,9 +21,15 @@
 /// Called whenever the mission in charge of us processes, used for checking stats like mission completion
 /datum/lazy_template/mission_type/proc/tick(seconds_per_tick)
 	SHOULD_CALL_PARENT(TRUE)
+	var/concluded_objectives = 0
 	if(length(objectives))
-		for(var/objective in objectives)
-			continue
+		for(var/datum/mission_objective/objective in objectives)
+			objective.check_status()
+			if(objective.objective_status > OBJECTIVE_INCOMPLETE)
+				concluded_objectives++
+	if(length(objectives) == concluded_objectives)
+		message_admins("Running mission - [mission_name] - has automatically finished due to completed objectives.")
+		mission_status = MISSION_STATUS_FINISHED
 
 /// Used to create a list of objectives related to the map
 /datum/lazy_template/mission_type/proc/create_objectives_lists()

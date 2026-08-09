@@ -9,4 +9,4 @@
 		outpost to investigate for looter activity and, if necessary, destruction of communications equipment."
 
 /datum/lazy_template/mission_type/pirate_comms_outpost/create_objectives_lists()
-	return
+	objectives += new /datum/mission_objective/hunt_mob(OBJECTIVE_ONE_MARKER)

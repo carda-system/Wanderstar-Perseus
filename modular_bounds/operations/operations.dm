@@ -27,14 +27,18 @@
 /// Loads the current mission's map into the world and starts the mission
 /datum/round_operation_type/proc/start_current_mission()
 	current_mission.lazy_load()
+	message_admins("New mission - [current_mission.mission_name] - has been started by the crew.")
+	current_mission.create_objectives_lists()
 	current_mission.mission_status = MISSION_STATUS_RUNNING
 
 /// Instantly gives up on the current mission and allows the map to cleanup when wanted if it turns out to be too difficult
 /datum/round_operation_type/proc/give_up_on_mission()
+	message_admins("Running mission - [current_mission.mission_name] - has finished due to the crew surrendering the mission.")
 	current_mission.mission_status = MISSION_STATUS_FINISHED
 
 /// Sets the current mission to be ending and deletes the map after giving it time to clean up and rescue any mobs still present
 /datum/round_operation_type/proc/end_current_mission(forced_instant)
+	message_admins("Running mission - [current_mission.mission_name] - has begun cleanup, manually triggered by the crew.")
 	current_mission.mission_status = MISSION_STATUS_CLEANING
 	if(forced_instant)
 		delete_current_map()

@@ -11,4 +11,4 @@
 		tricked once forces enter port, expect heavy resistance inside the bunker."
 
 /datum/lazy_template/mission_type/pirate_arms_bunker/create_objectives_lists()
-	return
+	objectives += new /datum/mission_objective/hunt_mob(OBJECTIVE_ONE_MARKER)
