@@ -7220,6 +7220,8 @@
 #include "modular_bounds\loadout\examine.dm"
 #include "modular_bounds\loadout\loadout_checkers.dm"
 #include "modular_bounds\loadout\preferences.dm"
+#include "modular_bounds\mapping\turfs\closed_ship.dm"
+#include "modular_bounds\mapping\turfs\open_ship.dm"
 #include "modular_bounds\medical\blood.dm"
 #include "modular_bounds\operations\bridge_computer.dm"
 #include "modular_bounds\operations\landmarks.dm"

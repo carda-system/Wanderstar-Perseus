@@ -1,2 +1,2 @@
-output_name = "perseus_interior_white"
+output_name = "perseus_interior"
 template = "bitmask/diagonal_32x32.toml"
