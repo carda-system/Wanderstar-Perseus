@@ -1,0 +1,2 @@
+output_name = "perseus_interior_white"
+template = "bitmask/diagonal_32x32.toml"

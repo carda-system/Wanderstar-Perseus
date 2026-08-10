@@ -1,0 +1,2 @@
+output_name = "leo_exterior"
+template = "bitmask/diagonal_corner_32x32"

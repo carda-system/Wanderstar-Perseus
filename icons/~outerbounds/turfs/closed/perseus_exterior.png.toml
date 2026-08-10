@@ -1,0 +1,2 @@
+output_name = "perseus_exterior"
+template = "bitmask/diagonal_corner_32x32"
