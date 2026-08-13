@@ -10,6 +10,7 @@
 /turf/open/indestructible/ship_plating,
 /area/deathmatch/fullbright)
 "f" = (
+/obj/machinery/door/airlock/ship/light,
 /turf/open/floor/ship_tile/nonslip,
 /area/deathmatch/fullbright)
 "k" = (
@@ -47,6 +48,10 @@
 /obj/effect/landmark/objective,
 /turf/open/indestructible/ship_plating,
 /area/deathmatch/fullbright)
+"y" = (
+/obj/machinery/computer/operations_center,
+/turf/open/floor/catwalk_floor/ship,
+/area/deathmatch/fullbright)
 "z" = (
 /obj/machinery/door/airlock/ship/diogenes{
 	dir = 4
@@ -65,6 +70,10 @@
 /area/deathmatch/fullbright)
 "C" = (
 /turf/closed/indestructible/ship_interior,
+/area/deathmatch/fullbright)
+"D" = (
+/obj/machinery/door/airlock/ship/dark,
+/turf/open/floor/ship_tile/nonslip,
 /area/deathmatch/fullbright)
 "F" = (
 /turf/closed/indestructible/ship_interior/white,
@@ -374,7 +383,7 @@ m
 q
 q
 q
-f
+D
 a
 a
 a
@@ -417,7 +426,7 @@ m
 q
 q
 q
-f
+D
 a
 a
 a
@@ -458,7 +467,7 @@ q
 P
 Z
 v
-q
+y
 v
 c
 a
@@ -632,7 +641,7 @@ o
 v
 q
 q
-f
+D
 a
 a
 s

@@ -9,9 +9,12 @@
 		Intelligence collected by on-board officers or by local system jingwei relayed to the ship will be presented here in the \
 		form of operations packets that can be browsed through and acted upon. Due to the sensitive nature of the information on this \
 		board, access is only granted to officers with intelligence access."
-	icon_screen = "supply"
+	icon = 'modular_bounds/operations/icons/computer.dmi'
+	icon_screen = "screen"
+	icon_keyboard = "keyboard"
 	circuit = /obj/item/circuitboard/computer/operations_center
 	light_color = COLOR_BRIGHT_ORANGE
+	SET_BASE_PIXEL(-8, 0)
 
 #define MENU_NEXT_MISSION "Begin Next Mission"
 #define MENU_SURRENDER_MISSION "Surrender Current Mission"
