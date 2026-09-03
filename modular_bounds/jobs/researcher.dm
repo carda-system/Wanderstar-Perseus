@@ -25,7 +25,7 @@
 	ears = /obj/item/radio/headset/headset_sci
 	head = /obj/item/clothing/head/beret/science
 	shoes = /obj/item/clothing/shoes/jackboots
-	l_pocket = /obj/item/modular_computer/pda/science
+	l_pocket = /obj/item/modular_computer/pda/crew/science
 	r_pocket = /obj/item/clipboard
 
 	backpack = /obj/item/storage/backpack/science
